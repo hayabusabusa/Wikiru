@@ -43,10 +43,11 @@ public final class APIClient: APIClientProtocol {
         let format = URLQueryItem(name: "format", value: "json")
         let action = URLQueryItem(name: "action", value: "query")
         let list = URLQueryItem(name: "list", value: "search")
+        let limit = URLQueryItem(name: "srlimit", value: "30")
         let srsearch = URLQueryItem(name: "srsearch", value: encodedKeyword)
         
         var components = URLComponents(string: baseURL)
-        components?.queryItems = [format, action, list, srsearch]
+        components?.queryItems = [format, action, list, limit, srsearch]
         
         let url = components?.url
         

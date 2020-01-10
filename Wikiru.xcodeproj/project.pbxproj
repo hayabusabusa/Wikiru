@@ -16,6 +16,7 @@
 		A414A42623C807C6005E806B /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A414A42423C807C6005E806B /* SearchCell.xib */; };
 		A414A42A23C812DE005E806B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42923C812DE005E806B /* SearchModel.swift */; };
 		A414A42C23C81346005E806B /* SearchModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42B23C81345005E806B /* SearchModelDelegate.swift */; };
+		A414A42F23C81D73005E806B /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42E23C81D73005E806B /* SafariViewController.swift */; };
 		A4B95D8E23C6FB4C00DB079D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */; };
 		A4B95D9023C6FB4C00DB079D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */; };
 		A4B95D9723C6FB5200DB079D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B95D9623C6FB5200DB079D /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		A414A42423C807C6005E806B /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		A414A42923C812DE005E806B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		A414A42B23C81345005E806B /* SearchModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelDelegate.swift; sourceTree = "<group>"; };
+		A414A42E23C81D73005E806B /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		A4B95D8A23C6FB4C00DB079D /* Wikiru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wikiru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,6 +205,14 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		A414A42D23C81D63005E806B /* Safari */ = {
+			isa = PBXGroup;
+			children = (
+				A414A42E23C81D73005E806B /* SafariViewController.swift */,
+			);
+			path = Safari;
+			sourceTree = "<group>";
+		};
 		A4B95D8123C6FB4C00DB079D = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +321,7 @@
 				A414A41523C80304005E806B /* Base */,
 				A4B95DEC23C70C5700DB079D /* Root */,
 				A414A41823C8036A005E806B /* Search */,
+				A414A42D23C81D63005E806B /* Safari */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -504,6 +515,7 @@
 			files = (
 				A414A41A23C8037C005E806B /* SearchViewController.swift in Sources */,
 				A414A42123C8067D005E806B /* NavigationController.swift in Sources */,
+				A414A42F23C81D73005E806B /* SafariViewController.swift in Sources */,
 				A414A41723C80312005E806B /* BaseViewController.swift in Sources */,
 				A4B95DF223C70CFF00DB079D /* Storyboard.swift in Sources */,
 				A414A42523C807C6005E806B /* SearchCell.swift in Sources */,

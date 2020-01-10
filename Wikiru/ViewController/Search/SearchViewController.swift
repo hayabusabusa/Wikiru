@@ -21,7 +21,9 @@ final class SearchViewController: BaseViewController {
     
     private var dataSource: [Article] = [Article]() {
         didSet {
-            tableView.reloadData()
+            UIView.animate(withDuration: 0.3) {
+                self.tableView.reloadData()
+            }
         }
     }
     
@@ -64,6 +66,18 @@ extension SearchViewController {
     
     private func setupModel() {
         model.delegate = self
+    }
+}
+
+// MARK: - Transition
+
+extension SearchViewController {
+    
+    private func presentSafari(title: String) {
+        guard let encoded = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+            let url = URL(string: "https://ja.wikipedia.org/wiki/\(encoded)") else { return }
+        let vc = SafariViewController(url: url)
+        present(vc, animated: true, completion: nil)
     }
 }
 
@@ -118,5 +132,6 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presentSafari(title: dataSource[indexPath.row].title ?? "")
     }
 }
