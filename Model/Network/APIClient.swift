@@ -36,15 +36,11 @@ public final class APIClient: APIClientProtocol {
     // MARK: API
     
     public func getArticles(keyword: String, completion: @escaping ((Result<[Article], Error>) -> Void)) {
-        guard let encodedKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
-            return
-        }
-        
         let format = URLQueryItem(name: "format", value: "json")
         let action = URLQueryItem(name: "action", value: "query")
         let list = URLQueryItem(name: "list", value: "search")
         let limit = URLQueryItem(name: "srlimit", value: "30")
-        let srsearch = URLQueryItem(name: "srsearch", value: encodedKeyword)
+        let srsearch = URLQueryItem(name: "srsearch", value: keyword)
         
         var components = URLComponents(string: baseURL)
         components?.queryItems = [format, action, list, limit, srsearch]

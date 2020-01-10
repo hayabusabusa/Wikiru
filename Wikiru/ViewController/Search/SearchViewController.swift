@@ -19,13 +19,7 @@ final class SearchViewController: BaseViewController {
     
     private let model: SearchModelImpl = SearchModelImpl()
     
-    private var dataSource: [Article] = [Article]() {
-        didSet {
-            UIView.animate(withDuration: 0.3) {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    private var dataSource: [Article] = [Article]()
     
     // MARK: Overrides
     
@@ -61,6 +55,7 @@ extension SearchViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.setState(.empty(message:"リストが空です。\n検索バーから検索を行ってみてください 🔎"))
         tableView.register(SearchCell.nib, forCellReuseIdentifier: SearchCell.reuseIdentifier)
     }
     
@@ -87,12 +82,15 @@ extension SearchViewController: SearchModelDelegate {
     
     func onSuccess(articles: [Article]) {
         dataSource = articles
+        tableView.reloadData()
+        tableView.setState(dataSource.isEmpty ? .empty(message:"リストが空です。\n検索バーから検索を行ってみてください 🔎") : .none)
     }
     
     func onError(message: String) {
         let ac = UIAlertController(title: "", message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(ac, animated: true, completion: nil)
+        tableView.setState(.error(message: "エラーが発生しました。\nReason: \(message)"))
     }
 }
 
@@ -103,6 +101,7 @@ extension SearchViewController: UISearchBarDelegate, UISearchControllerDelegate 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let keyword = searchBar.text else { return }
         model.getArticles(keyword: keyword)
+        tableView.setState(.loading)
     }
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
