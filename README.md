@@ -4,3 +4,4 @@
 - MediaWiki API
 - MVC( Model and ViewController )
 - Embedded Framework
+- Not used thirdparty libraries
