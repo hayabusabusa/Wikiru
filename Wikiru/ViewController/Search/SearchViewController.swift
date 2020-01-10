@@ -87,9 +87,6 @@ extension SearchViewController: SearchModelDelegate {
     }
     
     func onError(message: String) {
-        let ac = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(ac, animated: true, completion: nil)
         tableView.setState(.error(message: "エラーが発生しました。\nReason: \(message)"))
     }
 }
