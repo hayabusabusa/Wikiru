@@ -8,11 +8,15 @@
 
 import UIKit
 
-final class RootViewController: UIViewController {
+final class RootViewController: BaseViewController {
     
     // MARK: IBOutlet
     
     // MARK: Properties
+    
+    lazy var onViewDidAppear: Void = {
+        replaceRootToSearch()
+    }()
     
     // MARK: Lifecycle
     
@@ -22,5 +26,20 @@ final class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        _ = onViewDidAppear
+    }
+}
+
+// MARK: - Transtion
+
+extension RootViewController {
+    
+    private func replaceRootToSearch() {
+        let vc = NavigationController(rootViewController: SearchViewController.instantiate())
+        replaceRoot(to: vc)
     }
 }

@@ -15,6 +15,13 @@ public struct Article: Decodable {
     public let wordCount: Int
     public let timestamp: String?
     
+    public var readMinute: Int {
+        return wordCount / 300
+    }
+    public var formattedTimestamp: String? {
+        return timestamp?.components(separatedBy: "T").first
+    }
+    
     private enum CodingKeys: String, CodingKey {
         case id = "pageid"
         case title

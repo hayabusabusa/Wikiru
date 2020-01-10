@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A414A41723C80312005E806B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A41623C80312005E806B /* BaseViewController.swift */; };
+		A414A41A23C8037C005E806B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A41923C8037C005E806B /* SearchViewController.swift */; };
+		A414A41C23C80390005E806B /* SearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A414A41B23C80390005E806B /* SearchViewController.storyboard */; };
+		A414A41F23C80522005E806B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A41E23C80522005E806B /* UIViewController+Extension.swift */; };
+		A414A42123C8067D005E806B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42023C8067D005E806B /* NavigationController.swift */; };
+		A414A42523C807C6005E806B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42323C807C6005E806B /* SearchCell.swift */; };
+		A414A42623C807C6005E806B /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A414A42423C807C6005E806B /* SearchCell.xib */; };
 		A4B95D8E23C6FB4C00DB079D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */; };
 		A4B95D9023C6FB4C00DB079D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */; };
 		A4B95D9723C6FB5200DB079D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B95D9623C6FB5200DB079D /* Assets.xcassets */; };
@@ -73,6 +80,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A414A41623C80312005E806B /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A414A41923C8037C005E806B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A414A41B23C80390005E806B /* SearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchViewController.storyboard; sourceTree = "<group>"; };
+		A414A41E23C80522005E806B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A414A42023C8067D005E806B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		A414A42323C807C6005E806B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		A414A42423C807C6005E806B /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		A4B95D8A23C6FB4C00DB079D /* Wikiru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wikiru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +146,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A414A41523C80304005E806B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A414A41623C80312005E806B /* BaseViewController.swift */,
+				A414A42023C8067D005E806B /* NavigationController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A414A41823C8036A005E806B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A414A41923C8037C005E806B /* SearchViewController.swift */,
+				A414A41B23C80390005E806B /* SearchViewController.storyboard */,
+				A414A42223C807B1005E806B /* Cell */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		A414A41D23C804F8005E806B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A414A41E23C80522005E806B /* UIViewController+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A414A42223C807B1005E806B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A414A42323C807C6005E806B /* SearchCell.swift */,
+				A414A42423C807C6005E806B /* SearchCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		A4B95D8123C6FB4C00DB079D = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +210,7 @@
 				A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */,
 				A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */,
 				A4B95DEB23C70C4E00DB079D /* ViewController */,
+				A414A41D23C804F8005E806B /* Utils */,
 				A4B95D9623C6FB5200DB079D /* Assets.xcassets */,
 				A4B95D9823C6FB5200DB079D /* LaunchScreen.storyboard */,
 				A4B95D9B23C6FB5200DB079D /* Info.plist */,
@@ -235,7 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				A4B95DF123C70CFF00DB079D /* Storyboard.swift */,
+				A414A41523C80304005E806B /* Base */,
 				A4B95DEC23C70C5700DB079D /* Root */,
+				A414A41823C8036A005E806B /* Search */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -390,9 +443,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A414A42623C807C6005E806B /* SearchCell.xib in Resources */,
 				A4B95D9A23C6FB5200DB079D /* LaunchScreen.storyboard in Resources */,
 				A4B95D9723C6FB5200DB079D /* Assets.xcassets in Resources */,
 				A4B95DF023C70C8200DB079D /* RootViewController.storyboard in Resources */,
+				A414A41C23C80390005E806B /* SearchViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,8 +480,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A414A41A23C8037C005E806B /* SearchViewController.swift in Sources */,
+				A414A42123C8067D005E806B /* NavigationController.swift in Sources */,
+				A414A41723C80312005E806B /* BaseViewController.swift in Sources */,
 				A4B95DF223C70CFF00DB079D /* Storyboard.swift in Sources */,
+				A414A42523C807C6005E806B /* SearchCell.swift in Sources */,
 				A4B95D8E23C6FB4C00DB079D /* AppDelegate.swift in Sources */,
+				A414A41F23C80522005E806B /* UIViewController+Extension.swift in Sources */,
 				A4B95DEE23C70C6200DB079D /* RootViewController.swift in Sources */,
 				A4B95D9023C6FB4C00DB079D /* SceneDelegate.swift in Sources */,
 			);
