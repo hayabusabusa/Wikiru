@@ -36,8 +36,8 @@ class SearchCell: UITableViewCell {
     
     // MARK: Setup
     
-    func setupCell(title: String, wordCount: Int, readTime: Int, timestamp: String?) {
-        titleLabel.text = title
+    func setupCell(title: String?, wordCount: Int, readTime: Int, timestamp: String?) {
+        titleLabel.text = title ?? "- タイトルなし -"
         wordcountLabel.text = "\(wordCount)文字(\(readTime)分)"
         timestampLabel.text = "最終更新: \(timestamp ?? "-")"
     }

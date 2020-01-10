@@ -17,6 +17,14 @@ final class SearchViewController: BaseViewController {
     
     // MARK: Properties
     
+    private let model: SearchModelImpl = SearchModelImpl()
+    
+    private var dataSource: [Article] = [Article]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: Overrides
     
     // MARK: Lifecycle
@@ -29,6 +37,7 @@ final class SearchViewController: BaseViewController {
         super.viewDidLoad()
         setupNavigation()
         setupTableView()
+        setupModel()
     }
 }
 
@@ -38,6 +47,7 @@ extension SearchViewController {
     
     private func setupNavigation() {
         let searchController = UISearchController()
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.delegate = self
         searchController.searchBar.delegate = self
         navigationItem.title = "WiKiRu"
@@ -51,14 +61,37 @@ extension SearchViewController {
         tableView.tableFooterView = UIView()
         tableView.register(SearchCell.nib, forCellReuseIdentifier: SearchCell.reuseIdentifier)
     }
+    
+    private func setupModel() {
+        model.delegate = self
+    }
+}
+
+// MARK: - Model delegate
+
+extension SearchViewController: SearchModelDelegate {
+    
+    func onSuccess(articles: [Article]) {
+        dataSource = articles
+    }
+    
+    func onError(message: String) {
+        let ac = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true, completion: nil)
+    }
 }
 
 // MARK: - SearchController delegate
 
 extension SearchViewController: UISearchBarDelegate, UISearchControllerDelegate {
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let keyword = searchBar.text else { return }
+        model.getArticles(keyword: keyword)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-        print(searchBar.text ?? "nil")
         return true
     }
 }
@@ -68,11 +101,13 @@ extension SearchViewController: UISearchBarDelegate, UISearchControllerDelegate 
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseIdentifier, for: indexPath) as! SearchCell
+        let article = dataSource[indexPath.row]
+        cell.setupCell(title: article.title, wordCount: article.wordCount, readTime: article.readMinute, timestamp: article.formattedTimestamp)
         return cell
     }
 }

@@ -14,6 +14,8 @@
 		A414A42123C8067D005E806B /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42023C8067D005E806B /* NavigationController.swift */; };
 		A414A42523C807C6005E806B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42323C807C6005E806B /* SearchCell.swift */; };
 		A414A42623C807C6005E806B /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A414A42423C807C6005E806B /* SearchCell.xib */; };
+		A414A42A23C812DE005E806B /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42923C812DE005E806B /* SearchModel.swift */; };
+		A414A42C23C81346005E806B /* SearchModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414A42B23C81345005E806B /* SearchModelDelegate.swift */; };
 		A4B95D8E23C6FB4C00DB079D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */; };
 		A4B95D9023C6FB4C00DB079D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */; };
 		A4B95D9723C6FB5200DB079D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4B95D9623C6FB5200DB079D /* Assets.xcassets */; };
@@ -87,6 +89,8 @@
 		A414A42023C8067D005E806B /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		A414A42323C807C6005E806B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		A414A42423C807C6005E806B /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		A414A42923C812DE005E806B /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
+		A414A42B23C81345005E806B /* SearchModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModelDelegate.swift; sourceTree = "<group>"; };
 		A4B95D8A23C6FB4C00DB079D /* Wikiru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wikiru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B95D8D23C6FB4C00DB079D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4B95D8F23C6FB4C00DB079D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +186,23 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A414A42723C812BF005E806B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A414A42823C812D3005E806B /* Search */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A414A42823C812D3005E806B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A414A42B23C81345005E806B /* SearchModelDelegate.swift */,
+				A414A42923C812DE005E806B /* SearchModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		A4B95D8123C6FB4C00DB079D = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B95DE623C702BD00DB079D /* Network */,
-				A4B95DD223C6FBA100DB079D /* Response */,
+				A414A42723C812BF005E806B /* Model */,
 				A4B95DB623C6FB8900DB079D /* Model.h */,
 				A4B95DB723C6FB8900DB079D /* Info.plist */,
 			);
@@ -278,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B95DE723C702D400DB079D /* APIClient.swift */,
+				A4B95DD223C6FBA100DB079D /* Response */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -507,6 +529,8 @@
 				A4B95DDC23C6FFEB00DB079D /* Query.swift in Sources */,
 				A4B95DE023C7003E00DB079D /* WikiruResponse.swift in Sources */,
 				A4B95DD623C6FEE500DB079D /* Article.swift in Sources */,
+				A414A42A23C812DE005E806B /* SearchModel.swift in Sources */,
+				A414A42C23C81346005E806B /* SearchModelDelegate.swift in Sources */,
 				A4B95DE823C702D400DB079D /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
